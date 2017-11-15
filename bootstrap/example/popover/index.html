@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <link href="../../css/bootstrap.css" rel="stylesheet">
+        <script src="../../js/jquery-1.11.3.js"></script>
+        <script src="../../js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" style="margin-top:50px;">
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    Popover on 左侧
+                </button>
+                
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    Popover on 顶部
+                </button>
+                
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                sagittis lacus vel augue laoreet rutrum faucibus.">
+                    Popover on 底部
+                </button>
+                
+                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    Popover on 右侧
+                </button>
+            </div>
+        </div>
+    </body>
+    <script>
+        //通过javascript启动弹窗
+        //$('#example').popover(options);
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="popover"]').on('show.bs.popover', function (e) {
+            // do something…
+            console.log($(this).attr('data-placement'));
+            if($(this).attr('data-placement') == 'left') {
+                $(this).attr('data-content', 'left content');
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <link href="../../css/bootstrap.css" rel="stylesheet">
+        <link href="../../css/bootstrap-pager/bootstrap-pager.css" rel="stylesheet">
+        <script src="../../js/jquery-1.11.3.js"></script>
+        <script src="../../js/bootstrap.js"></script>
+        <script src="../../js/bootstrap-pager/bootstrap-pager.js"></script>
+    </head>
+    <body>
+        <div id="page-container-static-normal"></div>
+        
+        <div id="page-container-static-big"></div>
+    </body>
+    <script>
+        $(function () {
+            //静态演示
+            $("#page-container-static-normal").page({
+                count:100,
+                theme:"normal"
+            });
+            $("#page-container-static-normal").on("pageChanged",function (event,params) {
+                console.log(params);
+                $(this).data("page").refresh(params);
+            })
+
+            //静态  大型图标样式
+            $("#page-container-static-big").page({
+                count:100,
+                maxPage:7,
+                theme:"big"
+            });
+            $("#page-container-static-big").on("pageChanged",function (event,params) {
+                console.log(params);
+                $(this).data("page").refresh(params);
+            })
+        })
+    </script>
+</html>

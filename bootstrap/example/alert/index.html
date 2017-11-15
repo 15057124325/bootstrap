@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <link href="../../css/bootstrap.css" rel="stylesheet">
+        <script src="../../js/jquery-1.11.3.js"></script>
+        <script src="../../js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="bs-example bs-example-standalone" data-example-id="dismissible-alert-js">
+            <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+            </div>
+        
+            <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4>Oh snap! You got an error!</h4>
+                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                <p>
+                <button type="button" class="btn btn-danger">Take this action</button>
+                <button type="button" class="btn btn-default">Or do this</button>
+                </p>
+            </div>
+        </div>
+    </body>
+    <script>
+        $('[role="alert"]').on('closed.bs.alert', function () {
+            // do something…
+            console.log('alert close');
+        })
+    </script>
+</html>
